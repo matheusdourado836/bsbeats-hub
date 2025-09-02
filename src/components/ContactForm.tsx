@@ -7,24 +7,53 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Mensagem enviada!",
-      description: "Recebemos sua mensagem e responderemos em até 24 horas.",
-    });
-    
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Recebemos sua mensagem e responderemos em até 24 horas.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Ocorreu um erro. Tente novamente mais tarde.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -63,17 +92,34 @@ const ContactForm = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Nome Completo</Label>
-                  <Input id="name" placeholder="Seu nome" required />
+                  <Input 
+                    id="name" 
+                    placeholder="Seu nome" 
+                    value={formData.name}
+                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    required 
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="seu@email.com" required />
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    placeholder="seu@email.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    required 
+                  />
                 </div>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="subject">Tipo de Problema</Label>
-                <Select required>
+                <Select 
+                  value={formData.subject}
+                  onValueChange={(value) => setFormData(prev => ({ ...prev, subject: value }))}
+                  required
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Selecione o tipo de problema" />
                   </SelectTrigger>
@@ -94,6 +140,8 @@ const ContactForm = () => {
                   id="message" 
                   placeholder="Descreva seu problema ou dúvida em detalhes..."
                   className="min-h-[120px]"
+                  value={formData.message}
+                  onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                   required 
                 />
               </div>
