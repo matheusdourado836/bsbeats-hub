@@ -10,9 +10,11 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">B</span>
-            </div>
+            <img 
+              src="/lovable-uploads/605847a9-7bd7-4dc0-939c-f3e319bc11c7.png" 
+              alt="BSB Eats Logo" 
+              className="w-8 h-8 rounded-lg"
+            />
             <span className="text-xl font-bold">BSB Eats</span>
             <span className="text-sm text-muted-foreground hidden sm:inline">Suporte</span>
           </div>

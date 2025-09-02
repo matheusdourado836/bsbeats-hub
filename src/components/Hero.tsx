@@ -64,7 +64,11 @@ const Hero = () => {
               <div className="aspect-video bg-gradient-hero rounded-lg mb-4 flex items-center justify-center">
                 <div className="text-white text-center space-y-2">
                   <div className="w-16 h-16 mx-auto bg-white/20 rounded-2xl flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold">B</span>
+                    <img 
+                      src="/lovable-uploads/605847a9-7bd7-4dc0-939c-f3e319bc11c7.png" 
+                      alt="BSB Eats Logo" 
+                      className="w-12 h-12 rounded-lg"
+                    />
                   </div>
                   <h3 className="text-xl font-bold">BSB Eats</h3>
                   <p className="text-sm opacity-90">Descubra Brasília</p>
@@ -72,8 +76,8 @@ const Hero = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-medium">Disponível para iOS</span>
-                  <span className="text-sm text-muted-foreground">App Store</span>
+                  <span className="font-medium">Disponível para iOS e Android</span>
+                  <span className="text-sm text-muted-foreground">App Store & Play Store</span>
                 </div>
                 <div className="w-full bg-secondary rounded-full h-2">
                   <div className="bg-gradient-primary h-2 rounded-full w-3/4"></div>
