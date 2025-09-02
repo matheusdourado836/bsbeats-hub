@@ -22,7 +22,7 @@ const FAQ = () => {
     },
     {
       question: "Posso usar o app sem cadastro?",
-      answer: "Você pode navegar e buscar restaurantes sem cadastro, mas para avaliar, comentar, compartilhar fotos e usar a rede social, é necessário criar uma conta gratuita."
+      answer: "Não é possível usar o app sem cadastro, mas criar uma conta é super simples! Você pode se cadastrar rapidamente usando sua conta do Google ou Apple, ou criar uma conta tradicional com email."
     },
     {
       question: "Como faço para compartilhar fotos?",

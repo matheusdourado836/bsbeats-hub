@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, MessageSquare, Clock } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -56,35 +56,6 @@ const ContactForm = () => {
               </div>
             </Card>
 
-            <Card className="p-6 shadow-elegant">
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <MessageSquare className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-2">Chat no App</h3>
-                  <p className="text-muted-foreground">Disponível no aplicativo</p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Suporte instantâneo através do menu "Ajuda"
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 shadow-elegant">
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-2">Horário de Atendimento</h3>
-                  <p className="text-muted-foreground">Segunda a Sexta: 9h às 18h</p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Fins de semana: emergências apenas
-                  </p>
-                </div>
-              </div>
-            </Card>
           </div>
 
           <Card className="p-6 shadow-elegant">

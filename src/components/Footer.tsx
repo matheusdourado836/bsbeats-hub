@@ -97,7 +97,6 @@ const Footer = () => {
             <h4 className="font-semibold">Informações Legais</h4>
             <div className="text-sm text-muted-foreground space-y-1">
               <p>BSB Eats Tecnologia Ltda.</p>
-              <p>CNPJ: 00.000.000/0001-00</p>
               <p>Brasília, DF - Brasil</p>
             </div>
           </div>
@@ -107,9 +106,6 @@ const Footer = () => {
 
         <div className="text-center text-sm text-muted-foreground">
           <p>&copy; 2024 BSB Eats. Todos os direitos reservados.</p>
-          <p className="mt-1">
-            Este site de suporte atende aos requisitos da Apple App Store para informações de suporte do aplicativo.
-          </p>
         </div>
       </div>
     </footer>
