@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAM_ID.app.lovable.721b9750c2b24f81b61f920653cc4dc5",
+        "paths": [
+          "/restaurant/*/details",
+          "/posts/*"
+        ]
+      }
+    ]
+  }
+}
