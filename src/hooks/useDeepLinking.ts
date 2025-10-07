@@ -1,12 +1,20 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { App } from '@capacitor/app';
+import { Capacitor } from '@capacitor/core';
 
 export const useDeepLinking = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Only setup deep linking in native environment
+    if (!Capacitor.isNativePlatform()) {
+      console.log('Deep linking only works in native mobile apps');
+      return;
+    }
+
     const setupDeepLinking = async () => {
+      const { App } = await import('@capacitor/app');
+      
       // Handle app URL open event
       App.addListener('appUrlOpen', (event) => {
         console.log('Deep link received:', event.url);
@@ -36,7 +44,11 @@ export const useDeepLinking = () => {
     setupDeepLinking();
 
     return () => {
-      App.removeAllListeners();
+      if (Capacitor.isNativePlatform()) {
+        import('@capacitor/app').then(({ App }) => {
+          App.removeAllListeners();
+        });
+      }
     };
   }, [navigate]);
 };
