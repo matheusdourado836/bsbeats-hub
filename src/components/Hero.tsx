@@ -18,7 +18,7 @@ const Hero = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 O BSB Eats é o seu companheiro perfeito para descobrir os melhores restaurantes de Brasília. 
                 Encontre lugares incríveis para sair com amigos ou sozinho, e compartilhe suas experiências 
-                gastronômicas com nossa comunidade.
+                gastronômicas com nossa comunidade HOJE MESMO.
               </p>
             </div>
             
