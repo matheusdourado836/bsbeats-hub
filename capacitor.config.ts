@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: 'bsbeats-hub',
   webDir: 'dist',
   server: {
-    url: 'https://721b9750-c2b2-4f81-b61f-920653cc4dc5.lovableproject.com?forceHideBadge=true',
+    url: 'https://seu-dominio.lovable.app',
     cleartext: true
   },
   plugins: {
