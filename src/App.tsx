@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import RestaurantDetails from "./pages/RestaurantDetails";
 import PostDetails from "./pages/PostDetails";
+import Download from "./pages/Download";
 import NotFound from "./pages/NotFound";
 import { useDeepLinking } from "./hooks/useDeepLinking";
 
@@ -26,7 +27,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/restaurant/:id/details" element={<RestaurantDetails />} />
-          <Route path="/posts/:id" element={<PostDetails />} />
+          <Route path="/post/:id" element={<PostDetails />} />
+          <Route path="/download" element={<Download />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

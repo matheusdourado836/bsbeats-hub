@@ -3,9 +3,11 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useAppRedirect } from "@/hooks/useAppRedirect";
 
 const RestaurantDetails = () => {
   const { id } = useParams();
+  useAppRedirect(`/restaurant/${id}/details`);
 
   useEffect(() => {
     console.log("Restaurant Details - ID:", id);
