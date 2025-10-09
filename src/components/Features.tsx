@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { MapPin, Users, Camera, Star, Utensils, Heart } from "lucide-react";
+import { MapPin, Users, Camera, Star, Utensils, Heart, Gift } from "lucide-react";
 
 const Features = () => {
   const features = [
@@ -32,6 +32,11 @@ const Features = () => {
       icon: Heart,
       title: "Favoritos",
       description: "Salve seus restaurantes preferidos e crie listas personalizadas para diferentes ocasiões."
+    },
+    {
+      icon: Gift,
+      title: "Recompensas e Cupons",
+      description: "Ganhe recompensas exclusivas e utilize cupons de desconto para economizar em seus restaurantes favoritos."
     }
   ];
 
