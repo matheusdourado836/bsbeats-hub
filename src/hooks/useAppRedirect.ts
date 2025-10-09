@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 export const useAppRedirect = (deepLinkPath: string) => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     // Detecta se está em um dispositivo móvel
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -26,16 +23,8 @@ export const useAppRedirect = (deepLinkPath: string) => {
     }
 
     if (appUrl) {
-      // Tenta abrir o app
+      // Tenta abrir o app em background
       window.location.href = appUrl;
-
-      // Se após 2 segundos ainda estiver na página, redireciona para download
-      const timeout = setTimeout(() => {
-        navigate('/download');
-      }, 2000);
-
-      // Limpa o timeout se o componente for desmontado
-      return () => clearTimeout(timeout);
     }
-  }, [deepLinkPath, navigate]);
+  }, [deepLinkPath]);
 };
