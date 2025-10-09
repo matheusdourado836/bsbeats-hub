@@ -26,7 +26,7 @@ const PostDetails = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="gap-2" asChild>
               <a
-                href="https://apps.apple.com/br/app/bsbeats/id6738654939"
+                href="https://apps.apple.com/app/bsb-eats/id6751424005"
                 target="_blank"
                 rel="noopener noreferrer"
               >
