@@ -43,18 +43,17 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-16 px-4">
-      <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Perguntas Frequentes
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Encontre respostas para as dúvidas mais comuns sobre o BSB Eats
-          </p>
-        </div>
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold mb-3">
+          Perguntas Frequentes
+        </h3>
+        <p className="text-muted-foreground">
+          Encontre respostas para as dúvidas mais comuns sobre o BSB Eats
+        </p>
+      </div>
 
-        <Card className="p-6 shadow-elegant">
+      <Card className="p-6 shadow-elegant">
           <Accordion type="single" collapsible className="w-full">
             {faqItems.map((item, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
@@ -68,8 +67,7 @@ const FAQ = () => {
             ))}
           </Accordion>
         </Card>
-      </div>
-    </section>
+    </div>
   );
 };
 

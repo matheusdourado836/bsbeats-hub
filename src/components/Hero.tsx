@@ -10,15 +10,14 @@ const Hero = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                Bem-vindo ao suporte do{" "}
+                Descubra os melhores restaurantes de{" "}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  BSB Eats
+                  Brasília
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                O BSB Eats é o seu companheiro perfeito para descobrir os melhores restaurantes de Brasília. 
-                Encontre lugares incríveis para sair com amigos ou sozinho, e compartilhe suas experiências 
-                gastronômicas com nossa comunidade.
+                O BSB Eats é o seu companheiro perfeito para explorar a gastronomia de Brasília. 
+                Encontre lugares incríveis, compartilhe suas experiências e conecte-se com outros amantes da boa comida.
               </p>
             </div>
             
@@ -26,16 +25,16 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="shadow-elegant"
-                onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Ver FAQ
+                Baixar Agora
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
-                onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('recursos')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Falar Conosco
+                Ver Recursos
               </Button>
             </div>
 

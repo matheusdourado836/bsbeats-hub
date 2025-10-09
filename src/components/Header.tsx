@@ -16,7 +16,6 @@ const Header = () => {
               className="w-8 h-8 rounded-lg"
             />
             <span className="text-xl font-bold">BSB Eats</span>
-            <span className="text-sm text-muted-foreground hidden sm:inline">Suporte</span>
           </div>
           
           <nav className="hidden md:flex items-center space-x-6">
@@ -31,34 +30,34 @@ const Header = () => {
               Início
             </a>
             <a 
-              href="#faq" 
+              href="#recursos" 
               className="text-foreground hover:text-primary transition-colors"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('recursos')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              FAQ
+              Recursos
             </a>
             <a 
-              href="#contato" 
+              href="#download" 
               className="text-foreground hover:text-primary transition-colors"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Contato
+              Download
             </a>
             <a 
-              href="#politicas" 
+              href="#suporte" 
               className="text-foreground hover:text-primary transition-colors"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('politicas')?.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('suporte')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Políticas
+              Suporte
             </a>
           </nav>
 
@@ -76,17 +75,33 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t">
             <nav className="flex flex-col space-y-3 mt-4">
-              <a href="#inicio" className="text-foreground hover:text-primary transition-colors py-2">
+              <a 
+                href="#inicio" 
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Início
               </a>
-              <a href="#faq" className="text-foreground hover:text-primary transition-colors py-2">
-                FAQ
+              <a 
+                href="#recursos" 
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Recursos
               </a>
-              <a href="#contato" className="text-foreground hover:text-primary transition-colors py-2">
-                Contato
+              <a 
+                href="#download" 
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Download
               </a>
-              <a href="#politicas" className="text-foreground hover:text-primary transition-colors py-2">
-                Políticas
+              <a 
+                href="#suporte" 
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Suporte
               </a>
             </nav>
           </div>

@@ -57,18 +57,17 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contato" className="py-16 px-4 bg-secondary/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Entre em Contato
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Precisa de ajuda? Nossa equipe está aqui para você
-          </p>
-        </div>
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold mb-3">
+          Entre em Contato
+        </h3>
+        <p className="text-muted-foreground">
+          Precisa de ajuda? Nossa equipe está aqui para você
+        </p>
+      </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+      <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-6">
             <Card className="p-6 shadow-elegant">
               <div className="flex items-start space-x-4">
@@ -156,8 +155,7 @@ const ContactForm = () => {
             </form>
           </Card>
         </div>
-      </div>
-    </section>
+    </div>
   );
 };
 
